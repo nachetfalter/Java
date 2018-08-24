@@ -1,0 +1,28 @@
+# Test01: test all reject situations
+Cinema 1 A 5
+Session 1 09:00 Toy Story 3    # Test long movie name with space behind
+Request 1 1 09:00 12 # Test request rejected by seat limit
+	            # Output: Request rejected
+Request 1 1 09:00 -1 # Test request rejected by seat limit
+	            # Output: Request rejected
+Request 2 1 12:00 5 # Test request rejected by wrong session
+	            # Output: Request rejected
+Request 3 2 09:00 5 # Test request rejected by wrong cinema
+	            # Output: Request rejected
+Request 4 1 09:00 5 # Output: Request 4 A1-A5
+Change 5 1 09:00 5 # Test change reject by wrong booking
+	           # Output: Change rejected
+Change 4 2 09:00 5 # Test change reject by wrong cinema
+	           # Output: Change rejected
+Change 4 1 12:00 5 # Test change reject by wrong session
+	           # Output: Change rejected
+Change 4 1 09:00 15 # Test change reject by seat limit
+	           # Output: Change rejected
+Print 1 09:00 # Test failed change retain booking
+	      # Output: Toy Story 3
+              # Output: A: 1-5
+Cancel 1 # Test cancel rejected by wrong booking
+         # Output: Cancel rejected
+Cancel 4 # Output: Cancel 4
+Print 1 09:00 # Test print with no booking
+              # Output: Toy Story 3

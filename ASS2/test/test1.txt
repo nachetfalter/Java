@@ -1,0 +1,20 @@
+Refuelling 0 Sydney            
+Refuelling 0 Shanghai           
+Refuelling 0 Singapore        
+Refuelling 0 Vancouver       
+Refuelling 0 Manila            
+Time 18 Sydney Shanghai        
+Time 24 Sydney Singapore        
+Time 18 Sydney Vancouver        
+Time 10 Sydney Manila           
+Time 10 Shanghai Singapore      
+Time 24 Shanghai Vancouver      
+Time 12 Shanghai Manila         
+Time 24 Singapore Vancouver     
+Time 22 Singapore Manila        
+Time 20 Vancouver Manila        
+Shipment Singapore Vancouver    
+Shipment Shanghai Singapore
+Shipment Sydney Manila      
+Shipment Sydney Vancouver       
+    

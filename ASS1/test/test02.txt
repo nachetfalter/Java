@@ -1,0 +1,30 @@
+# Test02: test unordered row names and correct row print
+Cinema 1 Z 5
+Cinema 1 P() 5
+Cinema 1 q**^ 12
+Session 1 09:00 nyan cat
+Request 1 1 09:00 1 # Test single seat correct print
+	            # Output: Request 1 Z1
+Request 2 1 09:00 2 # Test request correct row print
+	            # Output: Request 2 Z2-Z3
+Request 3 1 09:00 1 # Test request correct row print with 2+ booking on a row
+                    # Output: Request 3 Z4
+Request 4 1 09:00 2 # Test correct row print
+                    # Output: Request 4 P()1-P()2
+Request 5 1 09:00 3 # Output: Request 5 P()3-P()5
+Cancel 4 # Output: Cancel 4
+Print 1 09:00 # Test correct print with row switching on empty seat
+              # Output: nyan cat
+              # Output: Z: 1, 2-3, 4
+              # Output: P(): 3-5
+Cancel 5 # Output: Cancel 5
+Request 6 1 09:00 11 # Request 6 q**^1-q**^11
+Print 1 09:00 # Test correct print with skipped row
+              # Output: nyan cat
+              # Output: Z: 1, 2-3, 4
+              # Output: q**^: 1-11
+Cancel 1 # Output: Cancel 1
+Cancel 2 # Output: Cancel 2
+Cancel 3 # Output: Cancel 3
+Print 1 09:00 # Test correct print with empty rows
+              # Output: q**^: 1-11

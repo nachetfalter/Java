@@ -1,0 +1,18 @@
+# Test03: test changes between different cinemas and sessions
+Cinema 1 dank 5
+Cinema 2 meme 5
+Session 1 09:00 where
+Session 1 10:00 am
+Session 2 09:00 i
+Request 1 1 09:00 2 # Output: Request 1 dank1-dank2
+Change 1 1 10:00 1 # Output: Change 1 dank1
+Print 1 09:00 # Test the change actually happened
+              # Output: where
+Print 1 10:00 # Output: am
+              # Output: dank: 1
+Change 1 2 09:00 5 # Test keep changing the same order
+                   # Output: Change: 1 meme1-meme5
+Print 1 10:00 # Test change between different cinema
+              # Output: am
+Print 2 09:00 # Output: i
+              # Output: meme: 1-5
